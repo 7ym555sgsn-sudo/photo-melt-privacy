@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PhotoMelt — Privacy Policy</title>
+  <style>
+    :root { color-scheme: light dark; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; padding: 2.5rem 1.25rem 4rem;
+      font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #1d1d1f; background: #fbfbfd;
+      display: flex; justify-content: center;
+    }
+    @media (prefers-color-scheme: dark) {
+      body { color: #e8e8ea; background: #0c0e12; }
+      a { color: #f2a33c; }
+      .card { background: #15181d; border-color: #23262c; }
+    }
+    .wrap { width: 100%; max-width: 720px; }
+    .brand { display:flex; align-items:center; gap:.7rem; margin-bottom: 1.75rem; }
+    .dot {
+      width: 38px; height: 38px; border-radius: 9px;
+      background: linear-gradient(135deg, #f7b246, #e06026);
+      display:inline-block; flex: none;
+    }
+    h1 { font-size: 1.7rem; margin: 0; letter-spacing: -0.02em; }
+    .updated { color: #86868b; font-size: .9rem; margin: .15rem 0 0; }
+    h2 { font-size: 1.15rem; margin: 2rem 0 .5rem; letter-spacing: -0.01em; }
+    a { color: #c4622f; }
+    ul { padding-left: 1.2rem; }
+    li { margin: .3rem 0; }
+    .card {
+      margin-top: 1.5rem; padding: 1rem 1.25rem; border: 1px solid #e6e6ea;
+      border-radius: 12px; background: #fff; font-size: .95rem;
+    }
+    footer { margin-top: 3rem; color: #86868b; font-size: .85rem; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="brand"><span class="dot"></span><h1>PhotoMelt — Privacy Policy</h1></div>
+    <p class="updated">Last updated: June 27, 2026</p>
+
+    <p>PhotoMelt (“the app,” “we,” “us”) helps contractors turn job-site photos
+    into organized, phase-grouped time-lapse videos. This policy explains exactly
+    what data the app handles and where it goes. We keep it short because the app
+    does very little with your data.</p>
+
+    <h2>What the app accesses</h2>
+    <ul>
+      <li><strong>Your photos.</strong> With your permission, PhotoMelt reads photos
+      from your library to find job-site images, group them by area and build
+      phase, and assemble time-lapse videos. You choose what to import; the app
+      does not scan or upload your library on its own.</li>
+      <li><strong>Saving videos.</strong> With your permission, PhotoMelt saves the
+      time-lapse videos it renders back to your photo library.</li>
+    </ul>
+
+    <h2>What gets sent off your device — and to whom</h2>
+    <p>To classify a photo (is it a job site? what phase and area?), the app sends
+    that <strong>image</strong> to our backend, a Supabase Edge Function we operate.
+    That function holds our AI provider key and forwards the image to
+    <strong>OpenAI</strong> for analysis, then returns a short text result (phase,
+    area label, a one-line description) to the app.</p>
+    <ul>
+      <li>Images are sent <strong>only</strong> when you run analysis, and only for
+      that purpose.</li>
+      <li>Our backend does <strong>not</strong> store your images — it passes them
+      to OpenAI, returns the result, and keeps nothing.</li>
+      <li>OpenAI processes the image to generate the analysis. Per OpenAI’s API
+      terms, API content is <strong>not used to train their models</strong>, and is
+      retained only briefly for abuse monitoring before deletion.</li>
+    </ul>
+
+    <h2>Anonymous device identifier</h2>
+    <p>The app generates a <strong>random identifier</strong> for your install (a
+    UUID stored on your device) and sends it with analysis requests so our backend
+    can enforce a fair daily usage limit. This identifier is <strong>not</strong>
+    tied to your name, email, Apple ID, contacts, or location, and is not used to
+    track you across other apps or websites. Our backend stores only this random
+    ID plus a per-day request count — never your photos or any personal
+    information.</p>
+
+    <h2>What we do NOT collect</h2>
+    <ul>
+      <li>No account or login.</li>
+      <li>No name, email, phone number, or address.</li>
+      <li>No location data.</li>
+      <li>No advertising identifiers, and no third-party analytics or ad SDKs.</li>
+    </ul>
+
+    <h2>Children</h2>
+    <p>PhotoMelt is a business tool intended for use by adults and is not directed
+    to children under 13.</p>
+
+    <h2>Changes</h2>
+    <p>If this policy changes, we will update the date above and post the new
+    version at this URL.</p>
+
+    <h2>Contact</h2>
+    <div class="card">Questions about privacy? Contact us at:
+      <strong>[set your support email here]</strong></div>
+
+    <footer>© 2026 PhotoMelt. All rights reserved.</footer>
+  </div>
+</body>
+</html>
